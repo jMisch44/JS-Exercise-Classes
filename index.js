@@ -121,9 +121,9 @@ class Car {
 */
 class Lambdasian {
   constructor(attributes){
-    this.name = attributes.name,
-    this.age = attributes.age,
-    this.location = attributes.location
+    this.name = attributes.name;
+    this.age = attributes.age;
+    this.location = attributes.location;
   }
   speak(){
     return `Hello my name is ${this.name}, I am from ${this.location}`;
@@ -151,9 +151,23 @@ const kev = new Lambdasian({
         + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
-class Instructor {
-
+class Instructor extends Lambdasian{
+  constructor(instrucAttributes){
+    super(instrucAttributes);
+    this.specialty = instrucAttributes.specialty;
+    this.favLanguage = instrucAttributes.favLanguage;
+    this.catchPhrase = instrucAttributes.catchPhrase;
+  }
+  demo(subject){
+    return `Today we are learning about ${subject}`
+   
+  }
+  grade(student, subject){
+     return `${student.name} receives a perfect score on ${subject}`
+  }
 }
+
+
 /*
   TASK 5
     - Write a Student class extending Lambdasian.
