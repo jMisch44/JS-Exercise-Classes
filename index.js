@@ -135,7 +135,7 @@ const kev = new Lambdasian({
   age: 30,
   location: 'PA'
 });
-
+console.log('task 3',kev);
 
 /*
   TASK 4
@@ -165,8 +165,12 @@ class Instructor extends Lambdasian{
   grade(student, subject){
      return `${student.name} receives a perfect score on ${subject}`
   }
+  evaluate(grade){
+    return grade + (Math.random() * (5 + 5) - 5);
+  }
 }
 
+// console.log();
 
 /*
   TASK 5
@@ -189,6 +193,7 @@ class Student extends Lambdasian{
     this.previousBackground = studentAttributes.previousBackground;
     this.className = studentAttributes.className;
     this.favSubjects = studentAttributes.favSubjects;
+    this.grade = 90;
   }
    listSubjects(){
      return `Loving ${this.favSubjects}!`
@@ -198,6 +203,13 @@ class Student extends Lambdasian{
    }
    sprintChallenge(subject){
      return `${this.name} has begun sprint challenge on ${subject}`
+   }
+   graduate(){
+     if(this.grade > 70){
+       return `You graduated Lambda School with a ${this.grade}! Congratulations!`
+     }else{
+      return `You didn't graduate Lambda School. Keep trying, you can do it!`
+     } 
    }
 }
 
